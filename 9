@@ -10,8 +10,11 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import to_categorical
 
-# Load UCI dataset (replace with actual CSV path)
-data = pd.read_csv('/path/to/uci_dataset.csv')
+#Loading dataset
+columns = ["letter", "x-box", "y-box", "width", "high", "onpix", "x-bar", "y-bar",
+           "x2bar", "y2bar", "xybar", "x2ybr", "xy2br", "x-ege", "xegvy", "y-ege", "yegvx"]
+
+df = pd.read_csv("path/to/your/file/letter-recognition.data", names=columns)
 
 # Assuming last column is target, rest are features
 X = data.iloc[:, :-1].values
